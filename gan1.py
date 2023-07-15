@@ -120,6 +120,9 @@ DG_model.compile(optimizer = 'adam', loss = 'binary_crossentropy')
 # Load the MNIST dataset
 (x_mnist, y_mnist), (_, _) = mnist.load_data()
 
+#Normalization of the imageset; the last layer is sigmoid (0->1)
+x_mnist = x_mnist/255.0
+
 #Show a sample image
 plt.figure()
 plt.imshow(x_mnist[50000,:,:], 'gray') #3
